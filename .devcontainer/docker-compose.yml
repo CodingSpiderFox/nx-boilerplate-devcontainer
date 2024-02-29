@@ -3,7 +3,7 @@ version: '3.8'
 services:
   devcontainer:
     image: mcr.microsoft.com/devcontainers/typescript-node:0-18
-    container_name: my-dev-container
+    command: sleep infinity
     ports:
       - "3000:3000"
     environment:
@@ -15,7 +15,6 @@ services:
   # MongoDB service
   mongodb:
     image: mongo:latest
-    container_name: mongodb-container
     ports:
       - "27017:27017"
     volumes:
@@ -30,7 +29,6 @@ services:
       - 6379
 
   redis-commander:
-    container_name: redis-commander
     hostname: redis-commander
     image: rediscommander/redis-commander:latest
     restart: always
